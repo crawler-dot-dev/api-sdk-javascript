@@ -1,12 +1,12 @@
 {
   "name": "crawler.dev",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "The official TypeScript library for the Crawler Dev API",
   "author": "Crawler Dev <>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:stainless-sdks/crawler.dev-typescript",
+  "repository": "github:crawler-dot-dev/api-sdk-javascript",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
