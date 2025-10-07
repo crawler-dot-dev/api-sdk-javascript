@@ -2,11 +2,10 @@
 
 [![NPM version](<https://img.shields.io/npm/v/crawler.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/crawler.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/crawler.dev)
 
-This library provides convenient access to the Crawler Dev REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the [crawler.dev](https://crawler.dev) REST API from server-side TypeScript or JavaScript.
 
 The full API of this library can be found in [api.md](api.md).
 
-It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
@@ -18,17 +17,43 @@ npm install crawler.dev
 
 The full API of this library can be found in [api.md](api.md).
 
+
+### Extract text from a file
 <!-- prettier-ignore -->
 ```js
 import CrawlerDev from 'crawler.dev';
 
 const client = new CrawlerDev({
-  apiKey: process.env['CRAWLER_DEV_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['CRAWLER_DEV_API_KEY']
 });
 
-const response = await client.files.extractText({ file: fs.createReadStream('path/to/file') });
+const response = await client.files.extractText({ 
+  file: fs.createReadStream('path/to/file.pdf') 
+});
 
-console.log(response.contentType);
+// log the extracted text
+console.log(response.extractedText);
+```
+
+### Extract text from a URL
+<!-- prettier-ignore -->
+```js
+import CrawlerDev from 'crawler.dev';
+
+const client = new CrawlerDev({
+  apiKey: process.env['CRAWLER_DEV_API_KEY']
+});
+
+const response = await client.urls.extractText({ 
+  url: "https://wikipedia.org",
+  // optional params
+  clean_text: true,
+  render_js: false,
+  strip_boilerplate: true
+});
+
+// log the extracted text
+console.log(response.extractedText);
 ```
 
 ### Request & Response types
@@ -40,11 +65,19 @@ This library includes TypeScript definitions for all request params and response
 import CrawlerDev from 'crawler.dev';
 
 const client = new CrawlerDev({
-  apiKey: process.env['CRAWLER_DEV_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['CRAWLER_DEV_API_KEY']
 });
 
-const params: CrawlerDev.FileExtractTextParams = { file: fs.createReadStream('path/to/file') };
+// create params
+const params: CrawlerDev.FileExtractTextParams = { 
+  file: fs.createReadStream('path/to/file.pdf') 
+};
+
+// extract text from the file
 const response: CrawlerDev.FileExtractTextResponse = await client.files.extractText(params);
+
+// log the extracted text
+console.log(response.extractedText);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -93,7 +126,8 @@ const response = await client.files
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
       console.log(err.headers); // {server: 'nginx', ...}
-    } else {
+    } 
+    else {
       throw err;
     }
   });
