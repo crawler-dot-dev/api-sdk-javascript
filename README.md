@@ -21,6 +21,7 @@ The full API of this library can be found in [api.md](api.md).
 ### Extract text from a file
 <!-- prettier-ignore -->
 ```js
+import fs from 'fs';
 import CrawlerDev from 'crawler.dev';
 
 const client = new CrawlerDev({
