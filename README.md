@@ -1,4 +1,4 @@
-# Crawler Dev TypeScript API Library
+# crawler.dev API TypeScript SDK
 
 [![NPM version](<https://img.shields.io/npm/v/crawler.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/crawler.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/crawler.dev)
 
