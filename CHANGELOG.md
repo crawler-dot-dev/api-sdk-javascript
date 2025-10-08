@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.4 (2025-10-08)
+
+Full Changelog: [v1.0.3...v1.0.4](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.0.3...v1.0.4)
+
+### Chores
+
+* configure new SDK language ([cd51ed1](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/cd51ed1c552abf7c9ee8a8ff826ca5da48d8614b))
+
 ## 1.0.3 (2025-10-08)
 
 Full Changelog: [v1.0.2...v1.0.3](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.0.2...v1.0.3)
