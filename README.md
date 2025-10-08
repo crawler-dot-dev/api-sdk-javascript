@@ -2,6 +2,8 @@
 
 [![NPM version](<https://img.shields.io/npm/v/crawler.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/crawler.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/crawler.dev)
 
+The crawler.dev API allows you to extract text from any kind of file or URL. You do not need to worry about mime-types, dynamic webpages, etc. You can throw any kind of file or URL at the API, and if there's text on it, it will be extracted and returned. Get your free API key at [crawler.dev](https://crawler.dev).
+
 This library provides convenient access to the [crawler.dev](https://crawler.dev) REST API from server-side TypeScript or JavaScript.
 
 The full API of this library can be found in [api.md](api.md).
@@ -14,8 +16,6 @@ npm install crawler.dev
 ```
 
 ## Usage
-
-The full API of this library can be found in [api.md](api.md).
 
 
 ### Extract text from a file
