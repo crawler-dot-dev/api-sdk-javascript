@@ -1,6 +1,6 @@
 {
   "name": "crawler.dev-mcp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The official MCP Server for the Crawler Dev API",
   "author": "Crawler Dev <>",
   "types": "dist/index.d.ts",
