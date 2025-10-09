@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.5 (2025-10-09)
+
+Full Changelog: [v1.0.4...v1.0.5](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.0.4...v1.0.5)
+
+### Chores
+
+* extract some types in mcp docs ([a015c9d](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/a015c9de1ec067c8356b966812a94ba938ac7586))
+
 ## 1.0.4 (2025-10-08)
 
 Full Changelog: [v1.0.3...v1.0.4](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.0.3...v1.0.4)
