@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'extract_text_files',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nUpload a file and extract text content from it. Supports PDF, DOC, DOCX, TXT and other text-extractable document formats.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    contentType: {\n      type: 'string'\n    },\n    extractedText: {\n      type: 'string'\n    },\n    filename: {\n      type: 'string'\n    },\n    sizeBytes: {\n      type: 'integer'\n    },\n    success: {\n      type: 'boolean'\n    },\n    textLength: {\n      type: 'integer'\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nUpload a file and extract text content from it. Supports PDF, DOC, DOCX, TXT and other text-extractable document formats.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/file_extract_text_response',\n  $defs: {\n    file_extract_text_response: {\n      type: 'object',\n      properties: {\n        contentType: {\n          type: 'string'\n        },\n        extractedText: {\n          type: 'string'\n        },\n        filename: {\n          type: 'string'\n        },\n        sizeBytes: {\n          type: 'integer'\n        },\n        success: {\n          type: 'boolean'\n        },\n        textLength: {\n          type: 'integer'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
