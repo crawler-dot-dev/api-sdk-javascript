@@ -25,8 +25,8 @@ describe('resource urls', () => {
     const response = await client.urls.extractText({
       url: 'url',
       clean_text: true,
-      render_js: true,
-      strip_boilerplate: true,
+      headers: { 'User-Agent': 'Custom Bot/1.0', 'X-API-Key': 'my-api-key', 'Accept-Language': 'en-US' },
+      proxy: { password: 'password', server: 'server', username: 'username' },
     });
   });
 });

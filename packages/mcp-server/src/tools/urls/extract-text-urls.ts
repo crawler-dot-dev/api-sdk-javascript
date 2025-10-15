@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'extract_text_urls',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nExtract text content from a webpage or document accessible via URL. Supports HTML, PDF, and other web-accessible content types.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/url_extract_text_response',\n  $defs: {\n    url_extract_text_response: {\n      type: 'object',\n      properties: {\n        contentType: {\n          type: 'string'\n        },\n        extractedText: {\n          type: 'string'\n        },\n        finalUrl: {\n          type: 'string'\n        },\n        sizeBytes: {\n          type: 'integer'\n        },\n        statusCode: {\n          type: 'integer'\n        },\n        success: {\n          type: 'boolean'\n        },\n        textLength: {\n          type: 'integer'\n        },\n        url: {\n          type: 'string'\n        }\n      }\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nExtract text content from a webpage or document accessible via URL. Supports HTML, PDF, and other web-accessible content types.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/url_extract_text_response',\n  $defs: {\n    url_extract_text_response: {\n      type: 'object',\n      properties: {\n        contentType: {\n          type: 'string'\n        },\n        extractedText: {\n          type: 'string'\n        },\n        finalUrl: {\n          type: 'string'\n        },\n        sizeBytes: {\n          type: 'integer'\n        },\n        statusCode: {\n          type: 'integer'\n        },\n        textLength: {\n          type: 'integer'\n        },\n        url: {\n          type: 'string'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -30,14 +30,29 @@ export const tool: Tool = {
         type: 'boolean',
         description: 'Whether to clean extracted text',
       },
-      render_js: {
-        type: 'boolean',
-        description:
-          'Whether to render JavaScript for HTML content. This parameter is ignored for binary content types (PDF, DOC, etc.) since they are not HTML.',
+      headers: {
+        type: 'object',
+        description: 'Custom HTTP headers to send with the request (case-insensitive)',
+        additionalProperties: true,
       },
-      strip_boilerplate: {
-        type: 'boolean',
-        description: 'Whether to remove boilerplate text',
+      proxy: {
+        type: 'object',
+        description: 'Proxy configuration for the request',
+        properties: {
+          password: {
+            type: 'string',
+            description: 'Proxy password for authentication',
+          },
+          server: {
+            type: 'string',
+            description:
+              'Proxy server URL (e.g., http://proxy.example.com:8080 or socks5://proxy.example.com:1080)',
+          },
+          username: {
+            type: 'string',
+            description: 'Proxy username for authentication',
+          },
+        },
       },
       jq_filter: {
         type: 'string',

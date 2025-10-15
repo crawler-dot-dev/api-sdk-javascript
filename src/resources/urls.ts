@@ -32,8 +32,6 @@ export interface URLExtractTextResponse {
 
   statusCode?: number;
 
-  success?: boolean;
-
   textLength?: number;
 
   url?: string;
@@ -51,15 +49,37 @@ export interface URLExtractTextParams {
   clean_text?: boolean;
 
   /**
-   * Whether to render JavaScript for HTML content. This parameter is ignored for
-   * binary content types (PDF, DOC, etc.) since they are not HTML.
+   * Custom HTTP headers to send with the request (case-insensitive)
    */
-  render_js?: boolean;
+  headers?: { [key: string]: string };
 
   /**
-   * Whether to remove boilerplate text
+   * Proxy configuration for the request
    */
-  strip_boilerplate?: boolean;
+  proxy?: URLExtractTextParams.Proxy;
+}
+
+export namespace URLExtractTextParams {
+  /**
+   * Proxy configuration for the request
+   */
+  export interface Proxy {
+    /**
+     * Proxy password for authentication
+     */
+    password?: string;
+
+    /**
+     * Proxy server URL (e.g., http://proxy.example.com:8080 or
+     * socks5://proxy.example.com:1080)
+     */
+    server?: string;
+
+    /**
+     * Proxy username for authentication
+     */
+    username?: string;
+  }
 }
 
 export declare namespace URLs {
