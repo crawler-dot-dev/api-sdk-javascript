@@ -35,8 +35,6 @@ export interface FileExtractTextResponse {
 
   sizeBytes?: number;
 
-  success?: boolean;
-
   textLength?: number;
 }
 
@@ -50,11 +48,6 @@ export interface FileExtractTextParams {
    * Whether to clean the extracted text
    */
   clean_text?: boolean;
-
-  /**
-   * Whether to remove boilerplate text
-   */
-  strip_boilerplate?: boolean;
 }
 
 export declare namespace Files {

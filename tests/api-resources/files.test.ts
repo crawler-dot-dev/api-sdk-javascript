@@ -27,7 +27,6 @@ describe('resource files', () => {
     const response = await client.files.extractText({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       clean_text: true,
-      strip_boilerplate: true,
     });
   });
 });
