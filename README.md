@@ -29,7 +29,8 @@ const client = new CrawlerDev({
 });
 
 const response = await client.files.extractText({ 
-  file: fs.createReadStream('path/to/file.pdf') 
+  file: fs.createReadStream('path/to/file.pdf'),
+  clean_text: true // optional, defaults to true
 });
 
 // log the extracted text
@@ -49,8 +50,15 @@ const response = await client.urls.extractText({
   url: "https://wikipedia.org",
   // optional params
   clean_text: true,
-  render_js: false,
-  strip_boilerplate: true
+  headers: {
+    "User-Agent": "Custom Bot/1.0",
+    "Accept-Language": "en-US"
+  },
+  proxy: {
+    server: "http://proxy.example.com:8080",
+    username: "user",
+    password: "pass"
+  }
 });
 
 // log the extracted text
@@ -203,12 +211,12 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new CrawlerDev();
 
-const response = await client.files.extractText({ file: fs.createReadStream('path/to/file') }).asResponse();
+const response = await client.files.extractText({ file: fs.createReadStream('path/to/file.pdf') }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: response, response: raw } = await client.files
-  .extractText({ file: fs.createReadStream('path/to/file') })
+  .extractText({ file: fs.createReadStream('path/to/file.pdf') })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(response.contentType);
