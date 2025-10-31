@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.2 (2025-10-31)
+
+Full Changelog: [v1.1.1...v1.1.2](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.1.1...v1.1.2)
+
+### Bug Fixes
+
+* **mcpb:** pin @anthropic-ai/mcpb version ([e32e2ad](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/e32e2adbc1074211481a616ff618b7bae1446dbb))
+
 ## 1.1.1 (2025-10-29)
 
 Full Changelog: [v1.1.0...v1.1.1](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.1.0...v1.1.1)
