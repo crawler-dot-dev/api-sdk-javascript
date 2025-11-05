@@ -31,7 +31,7 @@ describe('resource urls', () => {
       max_size: 10485760,
       max_timeout: 15000,
       proxy: { password: 'password', server: 'server', username: 'username' },
-      stealth_mode: false,
+      stealth_mode: true,
     });
   });
 });
