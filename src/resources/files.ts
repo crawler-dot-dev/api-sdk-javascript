@@ -45,7 +45,15 @@ export interface FileExtractTextParams {
   file: Uploadable;
 
   /**
-   * Whether to clean the extracted text
+   * Whether to clean and normalize the extracted text. When enabled (true):
+   *
+   * - For HTML content: Removes script, style, and other non-text elements before
+   *   extraction
+   * - Normalizes whitespace (collapses multiple spaces/tabs, normalizes newlines)
+   * - Removes empty lines and trims leading/trailing whitespace
+   * - Normalizes Unicode characters (NFC)
+   * - For JSON content: Only minimal cleaning to preserve structure When disabled
+   *   (false): Returns raw extracted text without any processing.
    */
   clean_text?: boolean;
 }

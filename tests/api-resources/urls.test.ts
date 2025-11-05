@@ -24,9 +24,14 @@ describe('resource urls', () => {
   test.skip('extractText: required and optional params', async () => {
     const response = await client.urls.extractText({
       url: 'url',
+      cache_age: 86400000,
       clean_text: true,
       headers: { 'User-Agent': 'Custom Bot/1.0', 'X-API-Key': 'my-api-key', 'Accept-Language': 'en-US' },
+      max_redirects: 5,
+      max_size: 10485760,
+      max_timeout: 15000,
       proxy: { password: 'password', server: 'server', username: 'username' },
+      stealth_mode: false,
     });
   });
 });

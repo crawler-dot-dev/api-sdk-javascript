@@ -28,7 +28,8 @@ export const tool: Tool = {
       },
       clean_text: {
         type: 'boolean',
-        description: 'Whether to clean the extracted text',
+        description:
+          'Whether to clean and normalize the extracted text. When enabled (true):\n- For HTML content: Removes script, style, and other non-text elements before extraction\n- Normalizes whitespace (collapses multiple spaces/tabs, normalizes newlines)\n- Removes empty lines and trims leading/trailing whitespace\n- Normalizes Unicode characters (NFC)\n- For JSON content: Only minimal cleaning to preserve structure\nWhen disabled (false): Returns raw extracted text without any processing.\n',
       },
       jq_filter: {
         type: 'string',
