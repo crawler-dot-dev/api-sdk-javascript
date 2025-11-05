@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.2.0 (2025-11-05)
+
+Full Changelog: [v1.1.2...v1.2.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.1.2...v1.2.0)
+
+### Features
+
+* **api:** api update ([fc3f820](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/fc3f82064c4081f4c4dc0831103ad94cd71a4eee))
+* **mcp:** enable optional code execution tool on http mcp servers ([c36fd41](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/c36fd41cb3bde44bc387b3acde104244d2f20372))
+
+
+### Chores
+
+* **internal:** grammar fix (it's -&gt; its) ([3272370](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/327237018ee3e49df05ace829c6c9ee049d0b42a))
+* mcp code tool explicit error message when missing a run function ([3b3c0a7](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/3b3c0a7f50162677767d9c2a9de95fe62ae1fb2d))
+* use structured error when code execution tool errors ([5b8f398](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/5b8f398293a169142649bf548c8f2ee3d28d71db))
+
 ## 1.1.2 (2025-10-31)
 
 Full Changelog: [v1.1.1...v1.1.2](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.1.1...v1.1.2)
