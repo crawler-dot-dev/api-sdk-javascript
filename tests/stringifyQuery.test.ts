@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APICrawlerDevSDKs } from 'api.crawler.dev-sdks';
+import { APICrawlerDevSDKs } from 'crawler.dev';
 
 const { stringifyQuery } = APICrawlerDevSDKs.prototype as any;
 

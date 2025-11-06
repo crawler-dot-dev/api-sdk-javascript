@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "api.crawler.dev-sdks/*": ["./src/*"],
-      "api.crawler.dev-sdks": ["./src/index.ts"]
+      "crawler.dev/*": ["./src/*"],
+      "crawler.dev": ["./src/index.ts"]
     },
     "noEmit": true,
 
