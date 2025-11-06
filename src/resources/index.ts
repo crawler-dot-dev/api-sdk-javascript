@@ -2,8 +2,8 @@
 
 export {
   Extract,
-  type ExtractExtractFromFileResponse,
-  type ExtractExtractFromURLResponse,
-  type ExtractExtractFromFileParams,
-  type ExtractExtractFromURLParams,
+  type ExtractFromFileResponse,
+  type ExtractFromURLResponse,
+  type ExtractFromFileParams,
+  type ExtractFromURLParams,
 } from './extract';

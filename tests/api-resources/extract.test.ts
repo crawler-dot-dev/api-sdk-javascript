@@ -9,8 +9,8 @@ const client = new APICrawlerDevSDKs({
 
 describe('resource extract', () => {
   // Prism tests are disabled
-  test.skip('extractFromFile: only required params', async () => {
-    const responsePromise = client.extract.extractFromFile({
+  test.skip('fromFile: only required params', async () => {
+    const responsePromise = client.extract.fromFile({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
     });
     const rawResponse = await responsePromise.asResponse();
@@ -23,8 +23,8 @@ describe('resource extract', () => {
   });
 
   // Prism tests are disabled
-  test.skip('extractFromFile: required and optional params', async () => {
-    const response = await client.extract.extractFromFile({
+  test.skip('fromFile: required and optional params', async () => {
+    const response = await client.extract.fromFile({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       cleanText: true,
       formats: ['text', 'markdown'],
@@ -32,8 +32,8 @@ describe('resource extract', () => {
   });
 
   // Prism tests are disabled
-  test.skip('extractFromURL: only required params', async () => {
-    const responsePromise = client.extract.extractFromURL({ url: 'url' });
+  test.skip('fromURL: only required params', async () => {
+    const responsePromise = client.extract.fromURL({ url: 'url' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,8 +44,8 @@ describe('resource extract', () => {
   });
 
   // Prism tests are disabled
-  test.skip('extractFromURL: required and optional params', async () => {
-    const response = await client.extract.extractFromURL({
+  test.skip('fromURL: required and optional params', async () => {
+    const response = await client.extract.fromURL({
       url: 'url',
       cacheAge: 86400000,
       cleanText: true,

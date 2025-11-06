@@ -13,15 +13,12 @@ export class Extract extends APIResource {
    *
    * @example
    * ```ts
-   * const response = await client.extract.extractFromFile({
+   * const response = await client.extract.fromFile({
    *   file: fs.createReadStream('path/to/file'),
    * });
    * ```
    */
-  extractFromFile(
-    body: ExtractExtractFromFileParams,
-    options?: RequestOptions,
-  ): APIPromise<ExtractExtractFromFileResponse> {
+  fromFile(body: ExtractFromFileParams, options?: RequestOptions): APIPromise<ExtractFromFileResponse> {
     return this._client.post(
       '/v1/extract/file',
       multipartFormRequestOptions({ body, ...options }, this._client),
@@ -34,20 +31,17 @@ export class Extract extends APIResource {
    *
    * @example
    * ```ts
-   * const response = await client.extract.extractFromURL({
+   * const response = await client.extract.fromURL({
    *   url: 'url',
    * });
    * ```
    */
-  extractFromURL(
-    body: ExtractExtractFromURLParams,
-    options?: RequestOptions,
-  ): APIPromise<ExtractExtractFromURLResponse> {
+  fromURL(body: ExtractFromURLParams, options?: RequestOptions): APIPromise<ExtractFromURLResponse> {
     return this._client.post('/v1/extract/url', { body, ...options });
   }
 }
 
-export interface ExtractExtractFromFileResponse {
+export interface ExtractFromFileResponse {
   contentType?: string;
 
   filename?: string;
@@ -66,7 +60,7 @@ export interface ExtractExtractFromFileResponse {
   text?: string;
 }
 
-export interface ExtractExtractFromURLResponse {
+export interface ExtractFromURLResponse {
   contentType?: string;
 
   finalUrl?: string;
@@ -89,7 +83,7 @@ export interface ExtractExtractFromURLResponse {
   url?: string;
 }
 
-export interface ExtractExtractFromFileParams {
+export interface ExtractFromFileParams {
   /**
    * The file to upload.
    */
@@ -118,7 +112,7 @@ export interface ExtractExtractFromFileParams {
   formats?: Array<'text' | 'markdown'>;
 }
 
-export interface ExtractExtractFromURLParams {
+export interface ExtractFromURLParams {
   /**
    * The URL to extract text from.
    */
@@ -172,7 +166,7 @@ export interface ExtractExtractFromURLParams {
   /**
    * Proxy configuration for the request
    */
-  proxy?: ExtractExtractFromURLParams.Proxy;
+  proxy?: ExtractFromURLParams.Proxy;
 
   /**
    * When enabled, we use a proxy for the request. If set to true, and the 'proxy'
@@ -183,7 +177,7 @@ export interface ExtractExtractFromURLParams {
   stealthMode?: boolean;
 }
 
-export namespace ExtractExtractFromURLParams {
+export namespace ExtractFromURLParams {
   /**
    * Proxy configuration for the request
    */
@@ -208,9 +202,9 @@ export namespace ExtractExtractFromURLParams {
 
 export declare namespace Extract {
   export {
-    type ExtractExtractFromFileResponse as ExtractExtractFromFileResponse,
-    type ExtractExtractFromURLResponse as ExtractExtractFromURLResponse,
-    type ExtractExtractFromFileParams as ExtractExtractFromFileParams,
-    type ExtractExtractFromURLParams as ExtractExtractFromURLParams,
+    type ExtractFromFileResponse as ExtractFromFileResponse,
+    type ExtractFromURLResponse as ExtractFromURLResponse,
+    type ExtractFromFileParams as ExtractFromFileParams,
+    type ExtractFromURLParams as ExtractFromURLParams,
   };
 }

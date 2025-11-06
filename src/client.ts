@@ -18,10 +18,10 @@ import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import {
   Extract,
-  ExtractExtractFromFileParams,
-  ExtractExtractFromFileResponse,
-  ExtractExtractFromURLParams,
-  ExtractExtractFromURLResponse,
+  ExtractFromFileParams,
+  ExtractFromFileResponse,
+  ExtractFromURLParams,
+  ExtractFromURLResponse,
 } from './resources/extract';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -730,9 +730,9 @@ export declare namespace APICrawlerDevSDKs {
 
   export {
     Extract as Extract,
-    type ExtractExtractFromFileResponse as ExtractExtractFromFileResponse,
-    type ExtractExtractFromURLResponse as ExtractExtractFromURLResponse,
-    type ExtractExtractFromFileParams as ExtractExtractFromFileParams,
-    type ExtractExtractFromURLParams as ExtractExtractFromURLParams,
+    type ExtractFromFileResponse as ExtractFromFileResponse,
+    type ExtractFromURLResponse as ExtractFromURLResponse,
+    type ExtractFromFileParams as ExtractFromFileParams,
+    type ExtractFromURLParams as ExtractFromURLParams,
   };
 }

@@ -29,7 +29,7 @@ const client = new APICrawlerDevSDKs({
   apiKey: process.env['API_CRAWLER_DEV_SDKS_API_KEY'], // This is the default and can be omitted
 });
 
-const response = await client.extract.extractFromFile({ file: fs.createReadStream('path/to/file') });
+const response = await client.extract.fromFile({ file: fs.createReadStream('path/to/file') });
 
 console.log(response.contentType);
 ```
@@ -46,10 +46,8 @@ const client = new APICrawlerDevSDKs({
   apiKey: process.env['API_CRAWLER_DEV_SDKS_API_KEY'], // This is the default and can be omitted
 });
 
-const params: APICrawlerDevSDKs.ExtractExtractFromFileParams = { file: fs.createReadStream('path/to/file') };
-const response: APICrawlerDevSDKs.ExtractExtractFromFileResponse = await client.extract.extractFromFile(
-  params,
-);
+const params: APICrawlerDevSDKs.ExtractFromFileParams = { file: fs.createReadStream('path/to/file') };
+const response: APICrawlerDevSDKs.ExtractFromFileResponse = await client.extract.fromFile(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -70,17 +68,17 @@ import APICrawlerDevSDKs, { toFile } from 'api.crawler.dev-sdks';
 const client = new APICrawlerDevSDKs();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await client.extract.extractFromFile({ file: fs.createReadStream('/path/to/file') });
+await client.extract.fromFile({ file: fs.createReadStream('/path/to/file') });
 
 // Or if you have the web `File` API you can pass a `File` instance:
-await client.extract.extractFromFile({ file: new File(['my bytes'], 'file') });
+await client.extract.fromFile({ file: new File(['my bytes'], 'file') });
 
 // You can also pass a `fetch` `Response`:
-await client.extract.extractFromFile({ file: await fetch('https://somesite/file') });
+await client.extract.fromFile({ file: await fetch('https://somesite/file') });
 
 // Finally, if none of the above are convenient, you can use our `toFile` helper:
-await client.extract.extractFromFile({ file: await toFile(Buffer.from('my bytes'), 'file') });
-await client.extract.extractFromFile({ file: await toFile(new Uint8Array([0, 1, 2]), 'file') });
+await client.extract.fromFile({ file: await toFile(Buffer.from('my bytes'), 'file') });
+await client.extract.fromFile({ file: await toFile(new Uint8Array([0, 1, 2]), 'file') });
 ```
 
 ## Handling errors
@@ -92,7 +90,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 const response = await client.extract
-  .extractFromFile({ file: fs.createReadStream('path/to/file') })
+  .fromFile({ file: fs.createReadStream('path/to/file') })
   .catch(async (err) => {
     if (err instanceof APICrawlerDevSDKs.APIError) {
       console.log(err.status); // 400
@@ -133,7 +131,7 @@ const client = new APICrawlerDevSDKs({
 });
 
 // Or, configure per-request:
-await client.extract.extractFromFile({ file: fs.createReadStream('path/to/file') }, {
+await client.extract.fromFile({ file: fs.createReadStream('path/to/file') }, {
   maxRetries: 5,
 });
 ```
@@ -150,7 +148,7 @@ const client = new APICrawlerDevSDKs({
 });
 
 // Override per-request:
-await client.extract.extractFromFile({ file: fs.createReadStream('path/to/file') }, {
+await client.extract.fromFile({ file: fs.createReadStream('path/to/file') }, {
   timeout: 5 * 1000,
 });
 ```
@@ -173,14 +171,12 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new APICrawlerDevSDKs();
 
-const response = await client.extract
-  .extractFromFile({ file: fs.createReadStream('path/to/file') })
-  .asResponse();
+const response = await client.extract.fromFile({ file: fs.createReadStream('path/to/file') }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: response, response: raw } = await client.extract
-  .extractFromFile({ file: fs.createReadStream('path/to/file') })
+  .fromFile({ file: fs.createReadStream('path/to/file') })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(response.contentType);
@@ -263,7 +259,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.extract.extractFromFile({
+client.extract.fromFile({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
