@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { CrawlerDev as default } from './client';
+export { APICrawlerDevSDKs as default } from './client';
 
 export { type Uploadable, toFile } from './core/uploads';
 export { APIPromise } from './core/api-promise';
-export { CrawlerDev, type ClientOptions } from './client';
+export { APICrawlerDevSDKs, type ClientOptions } from './client';
 export {
-  CrawlerDevError,
+  APICrawlerDevSDKsError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,

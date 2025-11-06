@@ -1,68 +1,37 @@
-# crawler.dev API TypeScript SDK
+# API Crawler Dev SDKs TypeScript API Library
 
-[![NPM version](<https://img.shields.io/npm/v/crawler.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/crawler.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/crawler.dev)
+[![NPM version](<https://img.shields.io/npm/v/api.crawler.dev-sdks.svg?label=npm%20(stable)>)](https://npmjs.org/package/api.crawler.dev-sdks) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/api.crawler.dev-sdks)
 
-The crawler.dev API allows you to extract text from any kind of file or URL. You do not need to worry about mime-types, dynamic webpages, etc. You can throw any kind of file or URL at the API, and if there's text on it, it will be extracted and returned. Get your free API key at [crawler.dev](https://crawler.dev).
-
-This library provides convenient access to the [crawler.dev](https://crawler.dev) REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the API Crawler Dev SDKs REST API from server-side TypeScript or JavaScript.
 
 The full API of this library can be found in [api.md](api.md).
 
+It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
 ```sh
-npm install crawler.dev
+npm install git+ssh://git@github.com:stainless-sdks/api.crawler.dev-sdks-typescript.git
 ```
+
+> [!NOTE]
+> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install api.crawler.dev-sdks`
 
 ## Usage
 
+The full API of this library can be found in [api.md](api.md).
 
-### Extract text from a file
 <!-- prettier-ignore -->
 ```js
-import fs from 'fs';
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 
-const client = new CrawlerDev({
-  apiKey: process.env['CRAWLER_DEV_API_KEY']
+const client = new APICrawlerDevSDKs({
+  apiKey: process.env['API_CRAWLER_DEV_SDKS_API_KEY'], // This is the default and can be omitted
 });
 
-const response = await client.files.extractText({ 
-  file: fs.createReadStream('path/to/file.pdf'),
-  clean_text: true // optional, defaults to true
-});
+const response = await client.extract.fromFile({ file: fs.createReadStream('path/to/file') });
 
-// log the extracted text
-console.log(response.extractedText);
-```
-
-### Extract text from a URL
-<!-- prettier-ignore -->
-```js
-import CrawlerDev from 'crawler.dev';
-
-const client = new CrawlerDev({
-  apiKey: process.env['CRAWLER_DEV_API_KEY']
-});
-
-const response = await client.urls.extractText({ 
-  url: "https://wikipedia.org",
-  // optional params
-  clean_text: true,
-  headers: {
-    "User-Agent": "Custom Bot/1.0",
-    "Accept-Language": "en-US"
-  },
-  proxy: {
-    server: "http://proxy.example.com:8080",
-    username: "user",
-    password: "pass"
-  }
-});
-
-// log the extracted text
-console.log(response.extractedText);
+console.log(response.contentType);
 ```
 
 ### Request & Response types
@@ -71,22 +40,14 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 
-const client = new CrawlerDev({
-  apiKey: process.env['CRAWLER_DEV_API_KEY']
+const client = new APICrawlerDevSDKs({
+  apiKey: process.env['API_CRAWLER_DEV_SDKS_API_KEY'], // This is the default and can be omitted
 });
 
-// create params
-const params: CrawlerDev.FileExtractTextParams = { 
-  file: fs.createReadStream('path/to/file.pdf') 
-};
-
-// extract text from the file
-const response: CrawlerDev.FileExtractTextResponse = await client.files.extractText(params);
-
-// log the extracted text
-console.log(response.extractedText);
+const params: APICrawlerDevSDKs.ExtractFromFileParams = { file: fs.createReadStream('path/to/file') };
+const response: APICrawlerDevSDKs.ExtractFromFileResponse = await client.extract.fromFile(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -102,22 +63,22 @@ Request parameters that correspond to file uploads can be passed in many differe
 
 ```ts
 import fs from 'fs';
-import CrawlerDev, { toFile } from 'crawler.dev';
+import APICrawlerDevSDKs, { toFile } from 'api.crawler.dev-sdks';
 
-const client = new CrawlerDev();
+const client = new APICrawlerDevSDKs();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await client.files.extractText({ file: fs.createReadStream('/path/to/file') });
+await client.extract.fromFile({ file: fs.createReadStream('/path/to/file') });
 
 // Or if you have the web `File` API you can pass a `File` instance:
-await client.files.extractText({ file: new File(['my bytes'], 'file') });
+await client.extract.fromFile({ file: new File(['my bytes'], 'file') });
 
 // You can also pass a `fetch` `Response`:
-await client.files.extractText({ file: await fetch('https://somesite/file') });
+await client.extract.fromFile({ file: await fetch('https://somesite/file') });
 
 // Finally, if none of the above are convenient, you can use our `toFile` helper:
-await client.files.extractText({ file: await toFile(Buffer.from('my bytes'), 'file') });
-await client.files.extractText({ file: await toFile(new Uint8Array([0, 1, 2]), 'file') });
+await client.extract.fromFile({ file: await toFile(Buffer.from('my bytes'), 'file') });
+await client.extract.fromFile({ file: await toFile(new Uint8Array([0, 1, 2]), 'file') });
 ```
 
 ## Handling errors
@@ -128,15 +89,14 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const response = await client.files
-  .extractText({ file: fs.createReadStream('path/to/file') })
+const response = await client.extract
+  .fromFile({ file: fs.createReadStream('path/to/file') })
   .catch(async (err) => {
-    if (err instanceof CrawlerDev.APIError) {
+    if (err instanceof APICrawlerDevSDKs.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
       console.log(err.headers); // {server: 'nginx', ...}
-    } 
-    else {
+    } else {
       throw err;
     }
   });
@@ -166,12 +126,12 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const client = new CrawlerDev({
+const client = new APICrawlerDevSDKs({
   maxRetries: 0, // default is 2
 });
 
 // Or, configure per-request:
-await client.files.extractText({ file: fs.createReadStream('path/to/file') }, {
+await client.extract.fromFile({ file: fs.createReadStream('path/to/file') }, {
   maxRetries: 5,
 });
 ```
@@ -183,12 +143,12 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const client = new CrawlerDev({
+const client = new APICrawlerDevSDKs({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
 // Override per-request:
-await client.files.extractText({ file: fs.createReadStream('path/to/file') }, {
+await client.extract.fromFile({ file: fs.createReadStream('path/to/file') }, {
   timeout: 5 * 1000,
 });
 ```
@@ -209,14 +169,14 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 
 <!-- prettier-ignore -->
 ```ts
-const client = new CrawlerDev();
+const client = new APICrawlerDevSDKs();
 
-const response = await client.files.extractText({ file: fs.createReadStream('path/to/file.pdf') }).asResponse();
+const response = await client.extract.fromFile({ file: fs.createReadStream('path/to/file') }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.files
-  .extractText({ file: fs.createReadStream('path/to/file.pdf') })
+const { data: response, response: raw } = await client.extract
+  .fromFile({ file: fs.createReadStream('path/to/file') })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(response.contentType);
@@ -232,13 +192,13 @@ console.log(response.contentType);
 
 The log level can be configured in two ways:
 
-1. Via the `CRAWLER_DEV_LOG` environment variable
+1. Via the `API_CRAWLER_DEV_SDKS_LOG` environment variable
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 
-const client = new CrawlerDev({
+const client = new APICrawlerDevSDKs({
   logLevel: 'debug', // Show all log messages
 });
 ```
@@ -264,13 +224,13 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 import pino from 'pino';
 
 const logger = pino();
 
-const client = new CrawlerDev({
-  logger: logger.child({ name: 'CrawlerDev' }),
+const client = new APICrawlerDevSDKs({
+  logger: logger.child({ name: 'APICrawlerDevSDKs' }),
   logLevel: 'debug', // Send all messages to pino, allowing it to filter
 });
 ```
@@ -299,7 +259,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.files.extractText({
+client.extract.fromFile({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
@@ -333,10 +293,10 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 import fetch from 'my-fetch';
 
-const client = new CrawlerDev({ fetch });
+const client = new APICrawlerDevSDKs({ fetch });
 ```
 
 ### Fetch options
@@ -344,9 +304,9 @@ const client = new CrawlerDev({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 
-const client = new CrawlerDev({
+const client = new APICrawlerDevSDKs({
   fetchOptions: {
     // `RequestInit` options
   },
@@ -361,11 +321,11 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
-const client = new CrawlerDev({
+const client = new APICrawlerDevSDKs({
   fetchOptions: {
     dispatcher: proxyAgent,
   },
@@ -375,9 +335,9 @@ const client = new CrawlerDev({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import CrawlerDev from 'crawler.dev';
+import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
 
-const client = new CrawlerDev({
+const client = new APICrawlerDevSDKs({
   fetchOptions: {
     proxy: 'http://localhost:8888',
   },
@@ -387,10 +347,10 @@ const client = new CrawlerDev({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import CrawlerDev from 'npm:crawler.dev';
+import APICrawlerDevSDKs from 'npm:api.crawler.dev-sdks';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
-const client = new CrawlerDev({
+const client = new APICrawlerDevSDKs({
   fetchOptions: {
     client: httpClient,
   },
@@ -409,7 +369,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/crawler-dot-dev/api-sdk-javascript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/api.crawler.dev-sdks-typescript/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

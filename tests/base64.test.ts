@@ -1,4 +1,4 @@
-import { fromBase64, toBase64 } from 'crawler.dev/internal/utils/base64';
+import { fromBase64, toBase64 } from 'api.crawler.dev-sdks/internal/utils/base64';
 
 describe.each(['Buffer', 'atob'])('with %s', (mode) => {
   let originalBuffer: BufferConstructor;
