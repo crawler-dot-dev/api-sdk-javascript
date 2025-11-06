@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'crawler.dev/internal/uploads';
-import { toFile } from 'crawler.dev/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'api.crawler.dev-sdks/internal/uploads';
+import { toFile } from 'api.crawler.dev-sdks/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
