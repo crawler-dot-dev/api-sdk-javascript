@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.3.1 (2025-11-06)
+
+Full Changelog: [v1.3.0...v1.3.1](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.3.0...v1.3.1)
+
+### Chores
+
+* **internal:** codegen related update ([2e6e4fe](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/2e6e4fe077bc92f9f4b30657a53dd957f272647a))
+* **mcp:** add friendlier MCP code tool errors on incorrect method invocations ([9a71ae1](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/9a71ae1e1d3eb268a2f69dff2f46205294d74351))
+* **mcp:** add line numbers to code tool errors ([6a87e39](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/6a87e39d8a16457397f28bbf187295edfb69176f))
+
+
+### Documentation
+
+* **mcp:** add a README button for one-click add to Cursor ([7bbe6ae](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/7bbe6aed55333fa205e00285151cbd1b2f21eefe))
+
 ## 1.3.0 (2025-11-05)
 
 Full Changelog: [v1.2.0...v1.3.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v1.2.0...v1.3.0)

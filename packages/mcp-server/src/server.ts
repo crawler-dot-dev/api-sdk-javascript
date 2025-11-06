@@ -34,7 +34,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'crawler_dev_api',
-      version: '1.3.0',
+      version: '1.3.1',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
