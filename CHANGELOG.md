@@ -1,0 +1,38 @@
+# Changelog
+
+## 0.1.0 (2025-11-06)
+
+Full Changelog: [v0.0.1...v0.1.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.0.1...v0.1.0)
+
+### Features
+
+* **api:** api update ([60d5559](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/60d55598e441724e80f677e111de161a6140c2b9))
+* **api:** api update ([42330ba](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/42330ba39259ab2cf6b91a66bdd1cac9dd44780f))
+* **api:** api update ([c94e390](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/c94e39030c44ab0a525af0020cceab594cc1e987))
+* **mcp:** enable optional code execution tool on http mcp servers ([33a8921](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/33a8921c38454694070fc1778c1b2307bc2c0203))
+
+
+### Bug Fixes
+
+* **mcpb:** pin @anthropic-ai/mcpb version ([13ce327](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/13ce327133732473207407de82a16bc4eb2e947d))
+
+
+### Chores
+
+* configure new SDK language ([cd51ed1](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/cd51ed1c552abf7c9ee8a8ff826ca5da48d8614b))
+* extract some types in mcp docs ([a015c9d](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/a015c9de1ec067c8356b966812a94ba938ac7586))
+* **internal:** codegen related update ([2e6e4fe](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/2e6e4fe077bc92f9f4b30657a53dd957f272647a))
+* **internal:** grammar fix (it's -&gt; its) ([70e1ae2](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/70e1ae2d5307d68a7ef6f4064c185037dbb87a02))
+* mcp code tool explicit error message when missing a run function ([b1f5985](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/b1f598557366bb7688dcbaa3a991eab3367ad76a))
+* **mcp:** add friendlier MCP code tool errors on incorrect method invocations ([9a71ae1](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/9a71ae1e1d3eb268a2f69dff2f46205294d74351))
+* **mcp:** add line numbers to code tool errors ([6a87e39](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/6a87e39d8a16457397f28bbf187295edfb69176f))
+* sync repo ([5be9d89](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/5be9d8997396bf1349e40e1d75f1a72311a17921))
+* update SDK settings ([f6f8e3e](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/f6f8e3ea86dfacd7e5a41432347e2da9f1d96094))
+* update SDK settings ([a0fded2](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/a0fded24e8b071fb71083bb0d86781fe836db4d6))
+* update SDK settings ([1c4979a](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/1c4979a4ef3c29aa08c07bd2af4b0035ff1c1c6a))
+* use structured error when code execution tool errors ([502df04](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/502df04e86e4e5a6786908fa03811f0c9952b88d))
+
+
+### Documentation
+
+* **mcp:** add a README button for one-click add to Cursor ([7bbe6ae](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/7bbe6aed55333fa205e00285151cbd1b2f21eefe))
