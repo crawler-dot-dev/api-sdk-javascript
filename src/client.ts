@@ -16,8 +16,13 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { FileExtractTextParams, FileExtractTextResponse, Files } from './resources/files';
-import { URLExtractTextParams, URLExtractTextResponse, URLs } from './resources/urls';
+import {
+  Extract,
+  ExtractFromFileParams,
+  ExtractFromFileResponse,
+  ExtractFromURLParams,
+  ExtractFromURLResponse,
+} from './resources/extract';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -40,7 +45,7 @@ export interface ClientOptions {
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['CRAWLER_DEV_BASE_URL'].
+   * Defaults to process.env['API_CRAWLER_DEV_SDKS_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -94,7 +99,7 @@ export interface ClientOptions {
   /**
    * Set the log level.
    *
-   * Defaults to process.env['CRAWLER_DEV_LOG'] or 'warn' if it isn't set.
+   * Defaults to process.env['API_CRAWLER_DEV_SDKS_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
 
@@ -107,9 +112,9 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Crawler Dev API.
+ * API Client for interfacing with the API Crawler Dev SDKs API.
  */
-export class CrawlerDev {
+export class APICrawlerDevSDKs {
   apiKey: string;
 
   baseURL: string;
@@ -125,10 +130,10 @@ export class CrawlerDev {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Crawler Dev API.
+   * API Client for interfacing with the API Crawler Dev SDKs API.
    *
-   * @param {string | undefined} [opts.apiKey=process.env['CRAWLER_DEV_API_KEY'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['CRAWLER_DEV_BASE_URL'] ?? https://api.crawler.dev] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.apiKey=process.env['API_CRAWLER_DEV_SDKS_API_KEY'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['API_CRAWLER_DEV_SDKS_BASE_URL'] ?? https://api.crawler.dev] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -137,13 +142,13 @@ export class CrawlerDev {
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = readEnv('CRAWLER_DEV_BASE_URL'),
-    apiKey = readEnv('CRAWLER_DEV_API_KEY'),
+    baseURL = readEnv('API_CRAWLER_DEV_SDKS_BASE_URL'),
+    apiKey = readEnv('API_CRAWLER_DEV_SDKS_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
     if (apiKey === undefined) {
-      throw new Errors.CrawlerDevError(
-        "The CRAWLER_DEV_API_KEY environment variable is missing or empty; either provide it, or instantiate the CrawlerDev client with an apiKey option, like new CrawlerDev({ apiKey: 'My API Key' }).",
+      throw new Errors.APICrawlerDevSDKsError(
+        "The API_CRAWLER_DEV_SDKS_API_KEY environment variable is missing or empty; either provide it, or instantiate the APICrawlerDevSDKs client with an apiKey option, like new APICrawlerDevSDKs({ apiKey: 'My API Key' }).",
       );
     }
 
@@ -154,14 +159,14 @@ export class CrawlerDev {
     };
 
     this.baseURL = options.baseURL!;
-    this.timeout = options.timeout ?? CrawlerDev.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? APICrawlerDevSDKs.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
     this.logLevel = defaultLogLevel;
     this.logLevel =
       parseLogLevel(options.logLevel, 'ClientOptions.logLevel', this) ??
-      parseLogLevel(readEnv('CRAWLER_DEV_LOG'), "process.env['CRAWLER_DEV_LOG']", this) ??
+      parseLogLevel(readEnv('API_CRAWLER_DEV_SDKS_LOG'), "process.env['API_CRAWLER_DEV_SDKS_LOG']", this) ??
       defaultLogLevel;
     this.fetchOptions = options.fetchOptions;
     this.maxRetries = options.maxRetries ?? 2;
@@ -224,7 +229,7 @@ export class CrawlerDev {
         if (value === null) {
           return `${encodeURIComponent(key)}=`;
         }
-        throw new Errors.CrawlerDevError(
+        throw new Errors.APICrawlerDevSDKsError(
           `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
         );
       })
@@ -696,10 +701,10 @@ export class CrawlerDev {
     }
   }
 
-  static CrawlerDev = this;
+  static APICrawlerDevSDKs = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static CrawlerDevError = Errors.CrawlerDevError;
+  static APICrawlerDevSDKsError = Errors.APICrawlerDevSDKsError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -715,25 +720,19 @@ export class CrawlerDev {
 
   static toFile = Uploads.toFile;
 
-  files: API.Files = new API.Files(this);
-  urls: API.URLs = new API.URLs(this);
+  extract: API.Extract = new API.Extract(this);
 }
 
-CrawlerDev.Files = Files;
-CrawlerDev.URLs = URLs;
+APICrawlerDevSDKs.Extract = Extract;
 
-export declare namespace CrawlerDev {
+export declare namespace APICrawlerDevSDKs {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
-    Files as Files,
-    type FileExtractTextResponse as FileExtractTextResponse,
-    type FileExtractTextParams as FileExtractTextParams,
-  };
-
-  export {
-    URLs as URLs,
-    type URLExtractTextResponse as URLExtractTextResponse,
-    type URLExtractTextParams as URLExtractTextParams,
+    Extract as Extract,
+    type ExtractFromFileResponse as ExtractFromFileResponse,
+    type ExtractFromURLResponse as ExtractFromURLResponse,
+    type ExtractFromFileParams as ExtractFromFileParams,
+    type ExtractFromURLParams as ExtractFromURLParams,
   };
 }
