@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/api.crawler.dev-sdks-typescript.git
+npm install git+ssh://git@github.com:crawler-dot-dev/api-sdk-javascript.git
 ```
 
 > [!NOTE]
@@ -369,7 +369,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/api.crawler.dev-sdks-typescript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/crawler-dot-dev/api-sdk-javascript/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
