@@ -106,7 +106,7 @@ export interface ExtractExtractFromFileParams {
    * - For JSON content: Only minimal cleaning to preserve structure When disabled
    *   (false): Returns raw extracted text without any processing.
    */
-  clean_text?: boolean;
+  cleanText?: boolean;
 
   /**
    * Array of output formats to include in the response. Options: 'text', 'markdown'.
@@ -129,12 +129,12 @@ export interface ExtractExtractFromURLParams {
    * caching) and 259200000 (3 days). Defaults to 172800000 (2 days) if not
    * specified.
    */
-  cache_age?: number;
+  cacheAge?: number;
 
   /**
    * Whether to clean extracted text
    */
-  clean_text?: boolean;
+  cleanText?: boolean;
 
   /**
    * Array of output formats to include in the response. Options: 'text', 'markdown'.
@@ -154,20 +154,20 @@ export interface ExtractExtractFromURLParams {
    * Maximum number of redirects to follow when fetching the URL. Must be between 0
    * (no redirects) and 20. Defaults to 5 if not specified.
    */
-  max_redirects?: number;
+  maxRedirects?: number;
 
   /**
    * Maximum content length in bytes for the URL response. Must be between 1024 (1KB)
    * and 52428800 (50MB). Defaults to 10485760 (10MB) if not specified.
    */
-  max_size?: number;
+  maxSize?: number;
 
   /**
    * Maximum time in milliseconds before the crawler gives up on loading a URL. Must
    * be between 1000 (1 second) and 30000 (30 seconds). Defaults to 10000 (10
    * seconds) if not specified.
    */
-  max_timeout?: number;
+  maxTimeout?: number;
 
   /**
    * Proxy configuration for the request
@@ -177,10 +177,10 @@ export interface ExtractExtractFromURLParams {
   /**
    * When enabled, we use a proxy for the request. If set to true, and the 'proxy'
    * option is set, it will be ignored. Defaults to false if not specified. Note:
-   * Enabling stealth_mode consumes an additional credit/quota point (2 credits total
+   * Enabling stealthMode consumes an additional credit/quota point (2 credits total
    * instead of 1) for this request.
    */
-  stealth_mode?: boolean;
+  stealthMode?: boolean;
 }
 
 export namespace ExtractExtractFromURLParams {

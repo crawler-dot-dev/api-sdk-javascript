@@ -26,7 +26,7 @@ describe('resource extract', () => {
   test.skip('extractFromFile: required and optional params', async () => {
     const response = await client.extract.extractFromFile({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
-      clean_text: true,
+      cleanText: true,
       formats: ['text', 'markdown'],
     });
   });
@@ -47,15 +47,15 @@ describe('resource extract', () => {
   test.skip('extractFromURL: required and optional params', async () => {
     const response = await client.extract.extractFromURL({
       url: 'url',
-      cache_age: 86400000,
-      clean_text: true,
+      cacheAge: 86400000,
+      cleanText: true,
       formats: ['text', 'markdown'],
       headers: { 'User-Agent': 'Custom Bot/1.0', 'X-API-Key': 'my-api-key', 'Accept-Language': 'en-US' },
-      max_redirects: 5,
-      max_size: 10485760,
-      max_timeout: 15000,
+      maxRedirects: 5,
+      maxSize: 10485760,
+      maxTimeout: 15000,
       proxy: { password: 'password', server: 'server', username: 'username' },
-      stealth_mode: true,
+      stealthMode: true,
     });
   });
 });
