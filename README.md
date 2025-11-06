@@ -1,6 +1,6 @@
 # API Crawler Dev SDKs TypeScript API Library
 
-[![NPM version](<https://img.shields.io/npm/v/api.crawler.dev-sdks.svg?label=npm%20(stable)>)](https://npmjs.org/package/api.crawler.dev-sdks) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/api.crawler.dev-sdks)
+[![NPM version](<https://img.shields.io/npm/v/crawler.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/crawler.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/crawler.dev)
 
 This library provides convenient access to the API Crawler Dev SDKs REST API from server-side TypeScript or JavaScript.
 
@@ -11,11 +11,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:crawler-dot-dev/api-sdk-javascript.git
+npm install crawler.dev
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install api.crawler.dev-sdks`
 
 ## Usage
 
@@ -23,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 
 const client = new APICrawlerDevSDKs({
   apiKey: process.env['API_CRAWLER_DEV_SDKS_API_KEY'], // This is the default and can be omitted
@@ -40,7 +37,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 
 const client = new APICrawlerDevSDKs({
   apiKey: process.env['API_CRAWLER_DEV_SDKS_API_KEY'], // This is the default and can be omitted
@@ -63,7 +60,7 @@ Request parameters that correspond to file uploads can be passed in many differe
 
 ```ts
 import fs from 'fs';
-import APICrawlerDevSDKs, { toFile } from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs, { toFile } from 'crawler.dev';
 
 const client = new APICrawlerDevSDKs();
 
@@ -196,7 +193,7 @@ The log level can be configured in two ways:
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 
 const client = new APICrawlerDevSDKs({
   logLevel: 'debug', // Show all log messages
@@ -224,7 +221,7 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 import pino from 'pino';
 
 const logger = pino();
@@ -293,7 +290,7 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 import fetch from 'my-fetch';
 
 const client = new APICrawlerDevSDKs({ fetch });
@@ -304,7 +301,7 @@ const client = new APICrawlerDevSDKs({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 
 const client = new APICrawlerDevSDKs({
   fetchOptions: {
@@ -321,7 +318,7 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
@@ -335,7 +332,7 @@ const client = new APICrawlerDevSDKs({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
 
 const client = new APICrawlerDevSDKs({
   fetchOptions: {
@@ -347,7 +344,7 @@ const client = new APICrawlerDevSDKs({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import APICrawlerDevSDKs from 'npm:api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'npm:crawler.dev';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
 const client = new APICrawlerDevSDKs({

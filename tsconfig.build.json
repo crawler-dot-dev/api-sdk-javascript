@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "api.crawler.dev-sdks/*": ["./dist/src/*"],
-      "api.crawler.dev-sdks": ["./dist/src/index.ts"]
+      "crawler.dev/*": ["./dist/src/*"],
+      "crawler.dev": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

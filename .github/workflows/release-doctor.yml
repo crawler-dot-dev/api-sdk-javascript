@@ -18,4 +18,5 @@ jobs:
         run: |
           bash ./bin/check-release-environment
         env:
+          NPM_TOKEN: ${{ secrets.API_CRAWLER_DEV_SDKS_NPM_TOKEN || secrets.NPM_TOKEN }}
 

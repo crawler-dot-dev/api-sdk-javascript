@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'api.crawler.dev-sdks/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from 'crawler.dev/internal/utils/path';
 import { inspect } from 'node:util';
 import { runInNewContext } from 'node:vm';
 

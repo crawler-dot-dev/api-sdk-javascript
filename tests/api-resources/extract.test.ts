@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import APICrawlerDevSDKs, { toFile } from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs, { toFile } from 'crawler.dev';
 
 const client = new APICrawlerDevSDKs({
   apiKey: 'My API Key',

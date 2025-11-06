@@ -1,5 +1,5 @@
 {
-  "name": "api.crawler.dev-sdks",
+  "name": "crawler.dev",
   "version": "0.0.1",
   "description": "The official TypeScript library for the API Crawler Dev SDKs API",
   "author": "API Crawler Dev SDKs <>",

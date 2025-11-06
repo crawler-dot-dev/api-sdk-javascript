@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'api.crawler.dev-sdks/core/api-promise';
+import { APIPromise } from 'crawler.dev/core/api-promise';
 
 import util from 'node:util';
-import APICrawlerDevSDKs from 'api.crawler.dev-sdks';
-import { APIUserAbortError } from 'api.crawler.dev-sdks';
+import APICrawlerDevSDKs from 'crawler.dev';
+import { APIUserAbortError } from 'crawler.dev';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {
