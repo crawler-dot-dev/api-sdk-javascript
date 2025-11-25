@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2025-11-25)
+
+Full Changelog: [v0.1.1...v0.2.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.1.1...v0.2.0)
+
+### Features
+
+* **api:** api update ([fef89ac](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/fef89acddafcb02e804283a9f6f1dc9d05e30cc9))
+
 ## 0.1.1 (2025-11-07)
 
 Full Changelog: [v0.1.0...v0.1.1](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.1.0...v0.1.1)
