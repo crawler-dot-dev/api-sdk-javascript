@@ -28,6 +28,7 @@ describe('resource extract', () => {
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       cleanText: true,
       formats: ['text', 'markdown'],
+      maxTimeout: '30s',
     });
   });
 
@@ -47,13 +48,13 @@ describe('resource extract', () => {
   test.skip('fromURL: required and optional params', async () => {
     const response = await client.extract.fromURL({
       url: 'url',
-      cacheAge: 86400000,
+      cacheAge: '1d',
       cleanText: true,
       formats: ['text', 'markdown'],
       headers: { 'User-Agent': 'Custom Bot/1.0', 'X-API-Key': 'my-api-key', 'Accept-Language': 'en-US' },
       maxRedirects: 5,
-      maxSize: 10485760,
-      maxTimeout: 15000,
+      maxSize: '8mb',
+      maxTimeout: '15s',
       proxy: { password: 'password', server: 'server', username: 'username' },
       stealthMode: true,
     });
