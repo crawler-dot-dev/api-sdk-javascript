@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 (2025-12-03)
+
+Full Changelog: [v0.2.1...v0.2.2](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.1...v0.2.2)
+
+### Chores
+
+* **internal:** upgrade eslint ([74b6446](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/74b64468ceed78fcb57c4b84298bbd9e8a3bbaae))
+
 ## 0.2.1 (2025-12-02)
 
 Full Changelog: [v0.2.0...v0.2.1](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.0...v0.2.1)
