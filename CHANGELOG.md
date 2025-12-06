@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.3 (2025-12-06)
+
+Full Changelog: [v0.2.2...v0.2.3](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.2...v0.2.3)
+
+### Bug Fixes
+
+* **mcp:** return correct lines on typescript errors ([dee6c24](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/dee6c24c0b5736acaa3154cd3e6802f6afdf0dce))
+
+
+### Chores
+
+* **internal:** codegen related update ([4e500b4](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/4e500b4726d9a03de3b4e4a27897c3dbfa0397e3))
+* **internal:** configure pnpm minimumReleaseAge to 1 day ([665f028](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/665f028ff90e14dc152d168d00fe9dfcc83113cb))
+
 ## 0.2.2 (2025-12-03)
 
 Full Changelog: [v0.2.1...v0.2.2](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.1...v0.2.2)
