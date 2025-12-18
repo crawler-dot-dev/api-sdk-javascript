@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.4 (2025-12-18)
+
+Full Changelog: [v0.2.3...v0.2.4](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.3...v0.2.4)
+
+### Bug Fixes
+
+* **mcp:** correct code tool API endpoint ([4069933](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/4069933187baf4c7eae530937f5a8a00d4d3c464))
+
+
+### Chores
+
+* **internal:** codegen related update ([d9f4d56](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/d9f4d56df18714e9e4ab36279690dfe16e5e65fe))
+
 ## 0.2.3 (2025-12-06)
 
 Full Changelog: [v0.2.2...v0.2.3](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.2...v0.2.3)
