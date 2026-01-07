@@ -43,7 +43,9 @@ const client = new APICrawlerDevSDKs({
   apiKey: process.env['API_CRAWLER_DEV_SDKS_API_KEY'], // This is the default and can be omitted
 });
 
-const params: APICrawlerDevSDKs.ExtractFromFileParams = { file: fs.createReadStream('path/to/file') };
+const params: APICrawlerDevSDKs.ExtractFromFileParams = {
+  file: fs.createReadStream('path/to/file'),
+};
 const response: APICrawlerDevSDKs.ExtractFromFileResponse = await client.extract.fromFile(params);
 ```
 
@@ -168,7 +170,9 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new APICrawlerDevSDKs();
 
-const response = await client.extract.fromFile({ file: fs.createReadStream('path/to/file') }).asResponse();
+const response = await client.extract
+  .fromFile({ file: fs.createReadStream('path/to/file') })
+  .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
