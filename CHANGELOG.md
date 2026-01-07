@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.5 (2026-01-07)
+
+Full Changelog: [v0.2.4...v0.2.5](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.4...v0.2.5)
+
+### Chores
+
+* break long lines in snippets into multiline ([28d98a5](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/28d98a5f190398c3311c97e58bc39441b47ed971))
+* **internal:** codegen related update ([934a66c](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/934a66c814a92318d3518bbcccd1926a865ce5f9))
+
 ## 0.2.4 (2025-12-18)
 
 Full Changelog: [v0.2.3...v0.2.4](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.3...v0.2.4)
