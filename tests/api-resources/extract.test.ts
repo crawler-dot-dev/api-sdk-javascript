@@ -51,11 +51,19 @@ describe('resource extract', () => {
       cacheAge: '1d',
       cleanText: true,
       formats: ['text', 'markdown'],
-      headers: { 'User-Agent': 'Custom Bot/1.0', 'X-API-Key': 'my-api-key', 'Accept-Language': 'en-US' },
+      headers: {
+        'User-Agent': 'Custom Bot/1.0',
+        'X-API-Key': 'my-api-key',
+        'Accept-Language': 'en-US',
+      },
       maxRedirects: 5,
       maxSize: '8mb',
       maxTimeout: '15s',
-      proxy: { password: 'password', server: 'server', username: 'username' },
+      proxy: {
+        password: 'password',
+        server: 'server',
+        username: 'username',
+      },
       stealthMode: true,
     });
   });
