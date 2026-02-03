@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.2.6 (2026-02-03)
+
+Full Changelog: [v0.2.5...v0.2.6](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.5...v0.2.6)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([d0e59c7](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/d0e59c72fa974159de00f76f8128b7ff60302da7))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([4246364](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/424636478a254cd82ea44132cb735e76e98eac9f))
+* **internal:** update `actions/checkout` version ([c4b5f95](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/c4b5f953333662e6900f93c73cfbff936410a0f2))
+* **internal:** update lock file ([63aa63e](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/63aa63e1964546672b4bd13bb5f596f069e2f6ee))
+* **internal:** upgrade babel, qs, js-yaml ([edcf540](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/edcf540b9dba8aaa07fec3a1072f7521ad061306))
+* **internal:** upgrade brace-expansion and @babel/helpers ([f73b4a6](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/f73b4a6aaf088c1e54e88d5129cd76f242b4cfad))
+
 ## 0.2.5 (2026-01-07)
 
 Full Changelog: [v0.2.4...v0.2.5](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.4...v0.2.5)
