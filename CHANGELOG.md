@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.7 (2026-02-06)
+
+Full Changelog: [v0.2.6...v0.2.7](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.6...v0.2.7)
+
+### Bug Fixes
+
+* **client:** avoid removing abort listener too early ([7b7ca2e](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/7b7ca2edb4f5ffffa51a2676eb9f2cd68a79b2aa))
+
+
+### Chores
+
+* **client:** do not parse responses with empty content-length ([b85e4ff](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/b85e4ffc1b4acbeabad9d49ace5d41b14e9f7100))
+* **client:** restructure abort controller binding ([e25db98](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/e25db98694ee64b89047b91fc0f9f4942a011958))
+
 ## 0.2.6 (2026-02-03)
 
 Full Changelog: [v0.2.5...v0.2.6](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.5...v0.2.6)
