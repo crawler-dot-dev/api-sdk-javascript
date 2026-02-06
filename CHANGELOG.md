@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.8 (2026-02-06)
+
+Full Changelog: [v0.2.7...v0.2.8](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.7...v0.2.8)
+
+### Chores
+
+* **internal:** upgrade pnpm ([ac3307c](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/ac3307c47d14568169c2a8532227f58924eb5194))
+
 ## 0.2.7 (2026-02-06)
 
 Full Changelog: [v0.2.6...v0.2.7](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.6...v0.2.7)

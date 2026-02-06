@@ -1,6 +1,6 @@
 {
   "name": "crawler.dev",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "The official TypeScript library for the API Crawler Dev SDKs API",
   "author": "API Crawler Dev SDKs <>",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
   "type": "commonjs",
   "repository": "github:crawler-dot-dev/api-sdk-javascript",
   "license": "Apache-2.0",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.27.0",
   "files": [
     "**/*"
   ],
