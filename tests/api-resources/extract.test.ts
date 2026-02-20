@@ -8,7 +8,7 @@ const client = new APICrawlerDevSDKs({
 });
 
 describe('resource extract', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('fromFile: only required params', async () => {
     const responsePromise = client.extract.fromFile({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
@@ -22,7 +22,7 @@ describe('resource extract', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('fromFile: required and optional params', async () => {
     const response = await client.extract.fromFile({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
@@ -32,7 +32,7 @@ describe('resource extract', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('fromURL: only required params', async () => {
     const responsePromise = client.extract.fromURL({ url: 'url' });
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource extract', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('fromURL: required and optional params', async () => {
     const response = await client.extract.fromURL({
       url: 'url',
