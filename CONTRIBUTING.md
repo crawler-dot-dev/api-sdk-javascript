@@ -60,7 +60,7 @@ $ yarn link crawler.dev
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global crawler.dev
+$ pnpm link --global crawler.dev
 ```
 
 ## Running tests
