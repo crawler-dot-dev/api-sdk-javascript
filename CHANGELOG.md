@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.2.8 (2026-02-24)
+
+Full Changelog: [v0.2.7...v0.2.8](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.7...v0.2.8)
+
+### Bug Fixes
+
+* **docs/contributing:** correct pnpm link command ([899231e](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/899231e46c2f8bccc1b2f6cd1c8ce3fadb35b0e6))
+
+
+### Chores
+
+* **internal/client:** fix form-urlencoded requests ([78236e0](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/78236e073c7f940582d0e6e71187f9fea4ecb3e5))
+* **internal:** avoid type checking errors with ts-reset ([c150a61](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/c150a616faac02afd51b61585f0f11442a0d87b1))
+* **internal:** remove mock server code ([88706ee](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/88706eecccf4a4b004b1d156003f53aec67bce28))
+* **internal:** upgrade pnpm ([ac3307c](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/ac3307c47d14568169c2a8532227f58924eb5194))
+* **internal:** upgrade pnpm version ([b2b9dab](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/b2b9dab34ba3e62896f08a839df6f35930d7ab2f))
+* update mock server docs ([bca5d94](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/bca5d948675ee47bf7ff0a4881ec76736d7edcf2))
+
 ## 0.2.7 (2026-02-06)
 
 Full Changelog: [v0.2.6...v0.2.7](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.6...v0.2.7)
