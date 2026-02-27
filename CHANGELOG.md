@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.9 (2026-02-27)
+
+Full Changelog: [v0.2.8...v0.2.9](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.8...v0.2.9)
+
+### Chores
+
+* **internal:** move stringifyQuery implementation to internal function ([920b5ff](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/920b5ff17197faf641fe5b4072e638875adf9ce6))
+
 ## 0.2.8 (2026-02-24)
 
 Full Changelog: [v0.2.7...v0.2.8](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.7...v0.2.8)
