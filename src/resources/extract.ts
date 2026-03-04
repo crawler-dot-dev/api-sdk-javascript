@@ -6,6 +6,9 @@ import { type Uploadable } from '../core/uploads';
 import { RequestOptions } from '../internal/request-options';
 import { multipartFormRequestOptions } from '../internal/uploads';
 
+/**
+ * Endpoints for extracting text from files and URLs
+ */
 export class Extract extends APIResource {
   /**
    * Upload a file and extract text content from it. Supports PDF, DOC, DOCX, TXT and

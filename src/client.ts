@@ -723,6 +723,9 @@ export class APICrawlerDevSDKs {
 
   static toFile = Uploads.toFile;
 
+  /**
+   * Endpoints for extracting text from files and URLs
+   */
   extract: API.Extract = new API.Extract(this);
 }
 
