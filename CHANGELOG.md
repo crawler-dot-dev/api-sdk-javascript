@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.2.9 (2026-03-08)
+
+Full Changelog: [v0.2.8...v0.2.9](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.8...v0.2.9)
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([957f742](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/957f7420dcc1d45e0be3142c66a2fcf8f111b66e))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([08d028a](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/08d028acf8f4a077c401b31da8be0b0c0d0a859f))
+* **internal:** codegen related update ([48024b7](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/48024b7fee2fa39831740cacb213ebef6c202618))
+* **internal:** codegen related update ([fc3ef6c](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/fc3ef6c9a70935a745baf423e0645222c7d7971c))
+* **internal:** move stringifyQuery implementation to internal function ([920b5ff](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/920b5ff17197faf641fe5b4072e638875adf9ce6))
+* update placeholder string ([5ce559b](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/5ce559b3048b57c8a19e86a94b9500420bab0721))
+
 ## 0.2.8 (2026-02-24)
 
 Full Changelog: [v0.2.7...v0.2.8](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.7...v0.2.8)
