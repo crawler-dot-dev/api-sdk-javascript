@@ -11,7 +11,7 @@ describe('resource extract', () => {
   // Mock server tests are disabled
   test.skip('fromFile: only required params', async () => {
     const responsePromise = client.extract.fromFile({
-      file: await toFile(Buffer.from('# my file contents'), 'README.md'),
+      file: await toFile(Buffer.from('Example data'), 'README.md'),
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -25,7 +25,7 @@ describe('resource extract', () => {
   // Mock server tests are disabled
   test.skip('fromFile: required and optional params', async () => {
     const response = await client.extract.fromFile({
-      file: await toFile(Buffer.from('# my file contents'), 'README.md'),
+      file: await toFile(Buffer.from('Example data'), 'README.md'),
       cleanText: true,
       formats: ['text', 'markdown'],
       maxTimeout: '30s',
