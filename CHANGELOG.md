@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.10 (2026-03-10)
+
+Full Changelog: [v0.2.9...v0.2.10](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.9...v0.2.10)
+
+### Chores
+
+* **internal:** update dependencies to address dependabot vulnerabilities ([baa7be9](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/baa7be93ba378ab17f569717c2fc1449e6c7c274))
+
 ## 0.2.9 (2026-03-08)
 
 Full Changelog: [v0.2.8...v0.2.9](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.8...v0.2.9)
