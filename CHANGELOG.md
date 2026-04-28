@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.3.0 (2026-04-28)
+
+Full Changelog: [v0.2.9...v0.3.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.9...v0.3.0)
+
+### Features
+
+* support setting headers via env ([b5216a8](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/b5216a8034c86c9625c2aaf033b3ff3b35c0694e))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([44d1041](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/44d1041f50f163f4b82024893beab7a419c2ae5f))
+* **internal:** codegen related update ([344b181](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/344b181bef88769a6930b60c3e2b64ff0cc2141b))
+* **internal:** codegen related update ([1177426](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/1177426ce5983480181efab939c1fef12e66dab8))
+* **internal:** more robust bootstrap script ([3a728c6](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/3a728c67dc8d685ac528d1249bb88020df7acc3c))
+* **internal:** tweak CI branches ([33b9fe0](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/33b9fe0b5c3b33e92649b013038c9f0144cc2a92))
+* **internal:** update dependencies to address dependabot vulnerabilities ([baa7be9](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/baa7be93ba378ab17f569717c2fc1449e6c7c274))
+* **internal:** update gitignore ([395070b](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/395070b5d99065e9d275d0d463f1972809983e94))
+
 ## 0.2.9 (2026-03-08)
 
 Full Changelog: [v0.2.8...v0.2.9](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.8...v0.2.9)
