@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 (2026-05-01)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.0...v0.3.1)
+
+### Chores
+
+* **format:** run eslint and prettier separately ([af7a0d6](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/af7a0d61ec5ddb8aff1b0be49343f124553aa2e5))
+
 ## 0.3.0 (2026-04-28)
 
 Full Changelog: [v0.2.9...v0.3.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.9...v0.3.0)
