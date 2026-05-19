@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.1 (2026-05-19)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.0...v0.3.1)
+
+### Bug Fixes
+
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([0faf21c](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/0faf21c74cbfd3b1a6e70f2714e8ba5829970907))
+
+
+### Chores
+
+* **format:** run eslint and prettier separately ([af7a0d6](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/af7a0d61ec5ddb8aff1b0be49343f124553aa2e5))
+* redact api-key headers in debug logs ([1a7422b](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/1a7422b52a39986a45c8815345e3f5a8e61fc1a1))
+* **tests:** remove redundant File import ([b35c052](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/b35c05216b53f8a79da31a15efd2a8bc873b063d))
+
 ## 0.3.0 (2026-04-28)
 
 Full Changelog: [v0.2.9...v0.3.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.2.9...v0.3.0)
