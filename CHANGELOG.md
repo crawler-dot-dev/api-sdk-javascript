@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.2 (2026-06-17)
+
+Full Changelog: [v0.3.1...v0.3.2](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.1...v0.3.2)
+
+### Bug Fixes
+
+* **client:** send content-type header for requests with an omitted optional body ([6253eab](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/6253eab4bdbd73ab53f16e5d974e9638990d2678))
+
 ## 0.3.1 (2026-05-19)
 
 Full Changelog: [v0.3.0...v0.3.1](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.0...v0.3.1)
