@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.3 (2026-07-11)
+
+Full Changelog: [v0.3.2...v0.3.3](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.2...v0.3.3)
+
+### Bug Fixes
+
+* **ci:** bump @arethetypeswrong/cli to ^0.18.0 and run CI workflows on Node 24 ([a165c3e](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/a165c3ee4bebbe04debf756cfa559249fde0384a))
+
 ## 0.3.2 (2026-06-17)
 
 Full Changelog: [v0.3.1...v0.3.2](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.1...v0.3.2)
