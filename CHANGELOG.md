@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 (2026-07-18)
+
+Full Changelog: [v0.3.3...v0.4.0](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.3...v0.4.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([fcba935](https://github.com/crawler-dot-dev/api-sdk-javascript/commit/fcba935742f8d4f29259386d8b06ae85bee9baa1))
+
 ## 0.3.3 (2026-07-11)
 
 Full Changelog: [v0.3.2...v0.3.3](https://github.com/crawler-dot-dev/api-sdk-javascript/compare/v0.3.2...v0.3.3)
